@@ -12,6 +12,13 @@ Created with ❤️ by [@xmysteriousx](https://t.me/xmysteriousx) as a part of [
 Please Be kind to star and fork this repo!✨😇
 <br>
 
+## Features 💫
+ - Mega accounts are not needed!
+ - No limits will be occured!
+ - Custom thumbnail support!
+ - Custom caption support!
+ - Ability to download any file under 2GB and return as a telegram file!
+ - 
 ## Known Issue (Please be kind enough to help me for fixing it if you can 🥺🙏)👇
 
 ➡️ <b>When downloading one link bot is being unresponsive for other users!</b>
@@ -23,7 +30,7 @@ It would be really helpful and I would be really grateful if any can come up wit
 <b>If you think you can help please be kind enough to make a pull request or mention a solution in the issues tab! 🙏</b>
 
 
-### Deploying Methods
+## Deploying Methods
 
 <details>
   <summary><b>Deploying to Heroku (The Easiest Way)</b></summary>
