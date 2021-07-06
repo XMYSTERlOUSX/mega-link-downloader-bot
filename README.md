@@ -26,7 +26,7 @@ Please be kind to star and fork this repo!✨😇
 ### More features that I can add! (easily) 😍😋
 - Feature of uploading telegram-files / direct-links to your mega account!
 - A messgae broadcasting system for users!
-- Unwanted users blacklisting system!
+- Un-wanted users blacklisting system!
 
 ---
 
