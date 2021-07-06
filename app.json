@@ -16,6 +16,7 @@
   ],
   "success_url": "https://t.me/mega_downloader_robot",
   "website": "https://github.com/XMYSTERlOUSX/mega-link-downloader-bot",
+  "logo": "https://telegra.ph/file/a438489c44d17d108f7b5.jpg",
   "repository": "https://github.com/XMYSTERlOUSX/mega-link-downloader-bot",
   "env": {
     "WEBHOOK": {
