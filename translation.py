@@ -22,7 +22,6 @@ https://github.com/XMYSTERlOUSX/mega-link-downloader-bot
 
 🛑 <i>If you see</i> <b>"Task Ongoing! A Download is in progress...⚠️"</b> <i>message as the last message of the channel {Config.Log_channel_username} please wait until you see the message</i> <b>"Task finished! Now other users can use me ✅"</b> <i>and then send your link to me!</i>
 
-
 <b>Before sending me anything first read the instructions by pressing /help</b>"""
     
     DOWNLOAD_START = "<b>𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗜𝗻𝘁𝗼 𝗠𝘆 𝗦𝗲𝗿𝘃𝗲𝗿 𝗡𝗼𝘄 ⚠️</b> \n\n<code>Please Wait Uploading Will Start Soon...</code>"
