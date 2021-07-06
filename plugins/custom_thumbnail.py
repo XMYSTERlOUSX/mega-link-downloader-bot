@@ -49,7 +49,7 @@ async def save_photo(bot, update):
         )
 
         
-@Client.on_message(filters.command(["deletethumbnail"]))
+@Client.on_message(filters.command("deletethumbnail"))
 async def delete_thumbnail(bot, update):
     download_location = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
     try:
