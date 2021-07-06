@@ -304,7 +304,7 @@ async def progress_for_pyrogram(
         elapsed_time = round(diff) * 1000
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion
-
+        bot_nmae = Config.Bot_username
         elapsed_time = TimeFormatter(milliseconds=elapsed_time)
         estimated_total_time = TimeFormatter(milliseconds=estimated_total_time)
 
@@ -313,12 +313,13 @@ async def progress_for_pyrogram(
             ''.join(["░" for i in range(20 - math.floor(percentage / 5))]),
             round(percentage, 2))
 
-        tmp = progress + "{0} of {1}\n○ <b>𝗦𝗽𝗲𝗲𝗱 :</b> {2}/s\n○ <b>𝗧𝗶𝗺𝗲 𝗟𝗲𝗳𝘁 :</b> {3}\n\n<b>uploading by {Config.Bot_username} </b>\n".format(
+        tmp = progress + "{0} of {1}\n○ <b>𝗦𝗽𝗲𝗲𝗱 :</b> {2}/s\n○ <b>𝗧𝗶𝗺𝗲 𝗟𝗲𝗳𝘁 :</b> {3}\n\n<b>uploading by {4} </b>\n".format(
             humanbytes(current),
             humanbytes(total),
             humanbytes(speed),
             # elapsed_time if elapsed_time != '' else "0 s",
-            estimated_total_time if estimated_total_time != '' else "0 s"
+            estimated_total_time if estimated_total_time != '' else "0 s",
+            bot_name
         )
         try:
             await message.edit(
