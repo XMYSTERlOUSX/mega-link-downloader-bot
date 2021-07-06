@@ -62,7 +62,7 @@ It would be really helpful and I would be really grateful if any can come up wit
 
 <br>
 
-**Make a vps (Recommended - Ubuntu 20.04 (LTS) x64) and log in to it)**
+**Make a vps (Recommended - Ubuntu 20.04 (LTS) x64) and log in to it.**
 - Then execute the below commands. 👇
 ```sh  
 sudo apt update
