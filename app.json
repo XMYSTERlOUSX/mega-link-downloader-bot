@@ -1,0 +1,73 @@
+{
+  "name": "Mega Link Downloader Bot",
+  "description": "This is a telegram bot to download mega.nz links.",
+  "keywords": [
+    "telegram",
+    "best",
+    "mega.nz",
+    "downloader",
+    "open",
+    "source",
+    "mega",
+    "pyrogram",
+    "bot",
+    "remote",
+    "uploader"
+  ],
+  "success_url": "https://t.me/mega_downloader_robot",
+  "website": "https://github.com/XMYSTERlOUSX/mega-link-downloader-bot",
+  "repository": "https://github.com/XMYSTERlOUSX/mega-link-downloader-bot",
+  "env": {
+    "WEBHOOK": {
+      "description": "Setting this to ANYTHING will enable webhooks when in env mode! (Don't change anything in this field!)",
+      "value": "ANYTHING"
+    },
+    "TG_BOT_TOKEN": {
+      "description": "Make a bot from https://t.me/BotFather and enter the token here",
+      "value": ""
+    },
+    "APP_ID": {
+      "description": "Get this value from https://my.telegram.org/apps",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "Get this value from https://my.telegram.org/apps",
+      "value": ""
+    },
+    "Log_channel_id": {
+      "description": "Make a channel and add your bot as an admin to it. This channel is for logging the details when processes are started and finished. Input the channel's id here.👇 If you don't know how to get the channel id send a message in the channel and forward it to https://t.me/AH_ForwarderBot and copy the chat id and enter it in the below field (must include -100 in front)",
+      "value": ""
+    },
+    "Log_channel_username": {
+      "description": "The username of the log channel you created above! (must enter with '@' in the front of the username)",
+      "value": ""
+    },
+    "Bot_username": {
+      "description": "Your bot's telegram username (must enter with '@' in the front of the username)",
+      "value": ""
+    },
+    "Mega_email": {
+      "description": "This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.",
+      "value": "",
+      "required": false
+    },
+    "Mega_password": {
+      "description": "This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.",
+      "value": "",
+      "required": false
+    }
+  },
+  "addons": [
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
