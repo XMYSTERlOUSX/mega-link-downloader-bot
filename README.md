@@ -12,12 +12,16 @@ Created with ❤️ by <b>[@xmysteriousx](https://t.me/xmysteriousx)</b> as a pa
 Please be kind to star and fork this repo!✨😇
 <br>
 
+---
+
 ## Features 💫
  - Mega accounts are not needed!
  - No limits will be occured!
  - Custom thumbnail support!
  - Custom caption support!
  - Ability to download any file under 2GB and return as a telegram file!
+
+---
 
 ## Known Issue (Please be kind enough to help me for fixing it if you can 🥺🙏)👇
 
@@ -29,6 +33,7 @@ It would be really helpful and I would be really grateful if any can come up wit
 
 <b>If you think you can help please be kind enough to make a pull request or mention a solution in the issues tab! 🙏</b>
 
+---
 
 ## Deploying Methods
 
@@ -132,7 +137,9 @@ python3 bot.py
 Now If you did everything correctly bot will be running successfully! 🥳
 </details>
 
-### Variables
+---
+
+## Variables
 - `API_ID` -  Get this value from https://my.telegram.org/apps
 - `API_HASH` - Get This Value from https://my.telegram.org/apps
 - `TG_BOT_TOKEN` - Make a bot from https://t.me/BotFather and enter the token here.
@@ -141,6 +148,8 @@ Now If you did everything correctly bot will be running successfully! 🥳
 - `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.
 - `Mega_password` - This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.
 - `Bot_username` - Your bot's telegram username (must enter with '@' in the front of the username)
+
+---
 
 ### Reason for making this open source :-
 
@@ -160,6 +169,8 @@ So for that reason had to make separate bot for it!
 
 <b>For the help of any guy like me in this world who is wondering how to make a bot for downloading mega links, or for whoever that is finding a code to download mega links; thought to make this public. 😇❤️</b>
 
+---
+
 ## Credits, and Thanks to
 
 * [SpEcHlDe](https://telegram.dog/ThankTelegram) for the base code [AnyDLBot](https://github.com/SpEcHiDe/AnyDLBot)
@@ -167,6 +178,8 @@ So for that reason had to make separate bot for it!
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
+
+---
 
 #### LICENSE
 - GPLv3
