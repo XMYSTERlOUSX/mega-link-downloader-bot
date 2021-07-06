@@ -5,11 +5,11 @@
 
 <b>You can find a live version of me in telegram as [@mega_downloader_robot](https://t.me/mega_downloader_robot)</b>
 
-Created with ❤️ by [@xmysteriousx](https://t.me/xmysteriousx) as a part of [@mysterious_uploader_robot](https://t.me/mysterious_uploader_robot)
+Created with ❤️ by <b>[@xmysteriousx](https://t.me/xmysteriousx)</b> as a part of [@mysterious_uploader_robot](https://t.me/mysterious_uploader_robot)
 
 <p align="center"><a href="https://t.me/rezoth_tm"><img src="https://img.shields.io/badge/Telegram-Join%20Telegram%20Group-blue.svg?logo=telegram"></a></p>
 
-Please Be kind to star and fork this repo!✨😇
+Please be kind to star and fork this repo!✨😇
 <br>
 
 ## Features 💫
