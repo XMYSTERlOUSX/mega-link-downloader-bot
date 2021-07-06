@@ -23,6 +23,13 @@ Please be kind to star and fork this repo!✨😇
 
 ---
 
+### More features that I can add! (easily) 😍😋
+- Feature of uploading telegram-files / direct-links to your mega account!
+- A messgae broadcasting system for users!
+- Unwanted users blacklisting system!
+
+---
+
 ## Known Issue (Please be kind enough to help me for fixing it if you can 🥺🙏)👇
 
 ➡️ <b>When downloading one link bot is being unresponsive for other users!</b>
