@@ -18,7 +18,7 @@ Please Be kind to star and fork this repo!✨😇
  - Custom thumbnail support!
  - Custom caption support!
  - Ability to download any file under 2GB and return as a telegram file!
- - 
+
 ## Known Issue (Please be kind enough to help me for fixing it if you can 🥺🙏)👇
 
 ➡️ <b>When downloading one link bot is being unresponsive for other users!</b>
@@ -136,7 +136,6 @@ Now If you did everything correctly bot will be running successfully! 🥳
 - `API_ID` -  Get this value from https://my.telegram.org/apps
 - `API_HASH` - Get This Value from https://my.telegram.org/apps
 - `TG_BOT_TOKEN` - Make a bot from https://t.me/BotFather and enter the token here.
-- `UPDATE_CHANNEL` - If you want your users to force to subscribe your channel paste your channel's username here without '@' symbol!
 - `Log_channel_id` - Make a channel and add your bot as an admin to it. This channel is for logging the details when processes are started and finished. Input the channel's in this field. If you don't know how to get the channel id send a message in the channel and forward it to https://t.me/AH_ForwarderBot and copy the chat id and enter it  (must include -100 in front)
 - `Log_channel_username` - The username of the log channel you created above! (must enter with '@' in the front of the username)
 - `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.
