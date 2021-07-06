@@ -168,6 +168,5 @@ So for that reason had to make separate bot for it!
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
 
-
 #### LICENSE
 - GPLv3
