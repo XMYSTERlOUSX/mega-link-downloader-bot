@@ -1,0 +1,15 @@
+python-telegram-bot
+instaloader
+beautifulsoup4
+hachoir
+numpy
+Pillow
+pyrogram
+requests
+tgcrypto
+python-dotenv
+psycopg2-binary
+youtube-dl
+feedparser
+#mega
+git+https://github.com/XMYSTERlOUSX/mega.py
