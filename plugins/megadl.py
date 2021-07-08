@@ -287,7 +287,12 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                     shutil.rmtree(tmp_directory_for_each_user)
                 except:
                     pass
-               
+    else:
+        await bot.send_message(
+            chat_id=update.chat.id,
+            text=f"""Sorry! Folder links are not supported!""",
+            reply_to_message_id=update.message_id
+        
 async def progress_for_pyrogram(
     current,
     total,
