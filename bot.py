@@ -14,7 +14,6 @@ else:
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-
 if __name__ == "__main__" :
     # create download directory, if not exist
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
@@ -30,3 +29,4 @@ if __name__ == "__main__" :
         plugins=plugins
     )
     app.run()
+    idle()
