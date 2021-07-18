@@ -180,8 +180,8 @@ So for that reason had to make separate bot for it!
 
 ## Credits, and Thanks to
 
-* [SpEcHlDe](https://telegram.dog/ThankTelegram) for the base code [AnyDLBot](https://github.com/SpEcHiDe/AnyDLBot)
-* [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) made for the https://mega.nz/API
+* [AnyDLBot](https://github.com/SpEcHiDe/AnyDLBot) of [SpEcHlDe](https://telegram.dog/ThankTelegram) for the base code that I have used for this.
+* [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) made for the [Mega Api]]https://mega.nz/API
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
