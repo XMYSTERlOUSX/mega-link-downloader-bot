@@ -154,7 +154,7 @@ Now If you did everything correctly bot will be running successfully! 🥳
 - `Log_channel_username` - The username of the log channel you created above! (must enter with '@' in the front of the username)
 - `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.
 - `Mega_password` - This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.
-- `Bot_username` - Your bot's telegram username (must enter with '@' in the front of the username)
+- `Bot_username` - Your bot's telegram username. (must enter with '@' in the front of the username)
 
 ---
 
