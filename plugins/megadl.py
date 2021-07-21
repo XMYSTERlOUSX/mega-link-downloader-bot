@@ -113,7 +113,7 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
             if the_file_size>max_file_size:
                 await bot.edit_message_text(
                     chat_id=update.chat.id,
-                    text=f"""Looks like your link is bigger than 2GB! <b>But due to telegram API limits I can't upload files which bigger than 2GB🥺</b>""",
+                    text=f"""Looks like your link is bigger than 2GB! <b>But due to telegram API limits I can't upload files which are bigger than 2GB🥺</b>""",
                     message_id=usermsg.message_id
                 )
             else:
