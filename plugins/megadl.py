@@ -219,6 +219,7 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                             )
                         start_time = time.time()
                         if tg_send_type == "vid":
+                            await update.reply_chat_action("upload_video")
                             megavid = await bot.send_video(
                                 chat_id=update.chat.id,
                                 video=download_directory,
@@ -239,6 +240,7 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                                 )
                             )
                         elif tg_send_type == "doc":
+                            await update.reply_chat_action("upload_document")
                             megadoc = await bot.send_document(
                                 chat_id=update.chat.id,
                                 document=download_directory,
