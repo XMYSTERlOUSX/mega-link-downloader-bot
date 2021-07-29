@@ -130,7 +130,7 @@ nano config.py
 ```sh  
 python3 bot.py
 ```
-Now If you did everything correctly bot will be running successfully! 🥳
+Now If you did everything correctly, the bot will be running successfully! 🥳
 </details>
 
 ---
@@ -152,11 +152,11 @@ First of all I am an absolute noob😇🥺 (You can ensure it if you see the cod
 So when I was going through github in search for finding a mega link downloader bot code or a plugin in <b>pyrogram</b> I found nothing!🥺😞
 
 <strike>(Cat userbot and ultroid userbot has a mega link downloader plugin. Also mirror bots have the mega link download feature but none of them were pyrogram.)</strike>
-(update :- After my bot many other bots/codes got created! 😅🤷‍♀️ )
+(Update :- After my bot many other bots/codes got created! 😂)
 
 I didn't wan't to change the [@mysterious_uploader_robot](https://t.me/mysterious_uploader_robot) 's whole base to telethon just for the feature of downloading mega links!😑😒 So I decided to make a plugin on my own, based on pyrogram. 🤷‍♀️
 
-The code was originally made as a plugin for my [@mysterious_uploader_robot](https://t.me/mysterious_uploader_robot) but <b>thought to make a separate bot for this!</b>
+The code was originally made as a plugin for my [@mysterious_uploader_robot](https://t.me/mysterious_uploader_robot) but thought to make a separate bot for downloading mega.nz links!
 
 <b>For the help of any guy like me in this world who is wondering how to make a bot for downloading mega links, or for whoever that is finding a code to download mega links; thought to make this public. 😇❤️</b>
 
@@ -166,7 +166,7 @@ The code was originally made as a plugin for my [@mysterious_uploader_robot](htt
 
 * [AnyDLBot](https://github.com/SpEcHiDe/AnyDLBot) of [SpEcHlDe](https://telegram.dog/ThankTelegram) for the base code that I have used for this.
 * [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) of [mega.nz-API](https://mega.nz/API)
-* [NexaBots](https://t.me/Nexa_bots) beacuse I got an example idea of how to add a download progress message, from their [forked mega.nz-API code](https://github.com/Its-fork/mega.py)
+* [Nexa Bots](https://t.me/Nexa_bots) beacuse I got an example idea of how to add a download progress message, from their [forked mega.nz-API code.](https://github.com/Its-fork/mega.py)
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
