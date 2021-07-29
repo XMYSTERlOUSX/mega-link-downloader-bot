@@ -35,14 +35,6 @@
       "description": "Get this value from https://my.telegram.org/apps",
       "value": ""
     },
-    "Log_channel_id": {
-      "description": "Make a channel and add your bot as an admin to it. This channel is for logging the details when processes are started and finished. Input the channel's id here.👇 If you don't know how to get the channel id send a message in the channel and forward it to https://t.me/AH_ForwarderBot and copy the chat id and enter it in the below field (must include -100 in front)",
-      "value": ""
-    },
-    "Log_channel_username": {
-      "description": "The username of the log channel you created above! (must enter with '@' in the front of the username)",
-      "value": ""
-    },
     "Bot_username": {
       "description": "Your bot's telegram username (must enter with '@' in the front of the username)",
       "value": ""
