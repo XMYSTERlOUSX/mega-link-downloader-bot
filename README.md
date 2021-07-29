@@ -166,7 +166,7 @@ The code was originally made as a plugin for my [@mysterious_uploader_robot](htt
 
 * [AnyDLBot](https://github.com/SpEcHiDe/AnyDLBot) of [SpEcHlDe](https://telegram.dog/ThankTelegram) for the base code that I have used for this.
 * [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) of [mega.nz-API](https://mega.nz/API)
-* [Nexa Bots](https://t.me/Nexa_bots) beacuse I got an example idea of how to add a download progress message, from their [forked mega.nz-API code.](https://github.com/Its-fork/mega.py)
+* [Nexa Bots](https://t.me/Nexa_bots) beacuse I got an example idea of how to add a download progress message, from their [forked mega.nz-API code.](https://github.com/Itz-fork/pyro-mega.py)
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
