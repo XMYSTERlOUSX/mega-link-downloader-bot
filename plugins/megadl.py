@@ -139,7 +139,7 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                   "/" + str(update.from_user.id) + ".jpg"
                 start = datetime.now()
                 try:
-                    # Added Loop and Partial funtions with ascyncio as a solution for the bot not responding isse!
+                    # Added Loop and Partial funtions with ascyncio as a solution for the bot not responding issue!
                     loop = get_running_loop()
                     await loop.run_in_executor(None, partial(download_with_progress, megalink, tmp_directory_for_each_user, usermsg))
                     d=1
