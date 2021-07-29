@@ -11,11 +11,14 @@ logger = logging.getLogger(__name__)
 import asyncio
 import json
 import math
+import subprocess
 import os
 import shutil
 import time
 from datetime import datetime
+from asyncio import get_running_loop
 from PIL import Image
+from functools import partial
 
 # the secret configuration specific things
 if bool(os.environ.get("WEBHOOK", False)):
@@ -53,7 +56,7 @@ else:
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def megadl(bot, update):
     url = update.text
-    if "mega" in url and ("folder" not in url or "#F" not in url or "#N" not in url):
+    if "mega.nz" in url and ("folder" not in url or "#F" not in url or "#N" not in url):
         usermsg = await bot.send_message(
             chat_id=update.chat.id,
             text=f"""<b>Processing...⏳</b>""",
@@ -119,17 +122,10 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
             else:
                 c=1
         if c == 1:
-            size_in_mb = int(the_file_size / 1024 / 1024)
-            size_in_gb = int(the_file_size / 1024 / 1024 / 1024)
-            gb_in_bytes = 1073741824
-            if the_file_size>gb_in_bytes:
-                display_size = f"""{size_in_gb}GB"""
-            else:
-                display_size = f"""{size_in_mb}MB"""
             try:
                 await bot.edit_message_text(
                     chat_id=update.chat.id,
-                    text="<b>Files detected</b> : " + fname + "\n" + "<b>Size</b> : " + display_size + "\n" + "\n" + Translation.DOWNLOAD_START,
+                    text=Translation.DOWNLOAD_START,
                     message_id=usermsg.message_id
                 )
                 megalink = url
@@ -141,17 +137,11 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                 download_directory = tmp_directory_for_each_user + "/" + fname
                 thumb_image_path = Config.DOWNLOAD_LOCATION + \
                   "/" + str(update.from_user.id) + ".jpg"
-                try:
-                    channelmsg = await bot.send_message(
-                    chat_id=Config.Log_channel_id,
-                    text=f"""<b>Task Ongoing! A Download is in progress...⚠️</b>\n\nNow {Config.Bot_username} will not respond to you.\n\nPlease wait until you see a message below this saying 'Task is finished'! and then you will be able to use me ({Config.Bot_username})"""
-                    )
-                    y=1
-                except:
-                    pass
                 start = datetime.now()
                 try:
-                    m.download_url(megalink, tmp_directory_for_each_user)
+                    # Added Loop and Partial funtions with ascyncio as a solution for the bot not responding isse!
+                    loop = get_running_loop()
+                    await loop.run_in_executor(None, partial(download_with_progress, megalink, tmp_directory_for_each_user, usermsg))
                     d=1
                 except:
                     try:
@@ -160,25 +150,10 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                             chat_id=update.chat.id,
                             message_id=usermsg.message_id
                         )
-                        if y == 1:
-                            await bot.send_message(
-                            chat_id=Config.Log_channel_id,
-                            text=f"""<b>This task is finished! Now other users can use me ✅</b>\n\nIf you see this message as the last message in the channel it means {Config.Bot_username} will respond to you now.\n\n<b>Now send the link to me ({Config.Bot_username}) quickly</b> before other users use me again!😅""",
-                            reply_to_message_id=channelmsg.message_id
-                            )
                         shutil.rmtree(tmp_directory_for_each_user)
                     except:
                         pass
                 if d == 1:
-                    if y == 1:
-                        try:
-                            await bot.send_message(
-                            chat_id=Config.Log_channel_id,
-                            text=f"""<b>This task is finished! Now other users can use me ✅</b>\n\nIf you see this message as the last message in the channel it means {Config.Bot_username} will respond to you now.\n\n<b>Now send the link to me ({Config.Bot_username}) quickly</b> before other users use me again!😅""",
-                            reply_to_message_id=channelmsg.message_id
-                            )
-                        except:
-                            pass
                     try:
                         end_one = datetime.now()
                         time_taken_for_download = (end_one -start).seconds
@@ -258,7 +233,6 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                             )
                         end_two = datetime.now()
                         time_taken_for_upload = (end_two - end_one).seconds
-                        #
                         await bot.edit_message_text(
                             text=Translation.AFTER_SUCCESSFUL_UPLOAD_MSG_WITH_TS.format(time_taken_for_download, time_taken_for_upload),
                             chat_id=update.chat.id,
@@ -396,3 +370,9 @@ async def take_screen_shot(video_file, output_directory, ttl):
         return out_put_file_name
     else:
         return None
+
+def download_with_progress(megalink, tmp_directory_for_each_user, usermsg):
+    try:
+        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg)
+    except Exception as e:
+        logger.info(e)
