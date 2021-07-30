@@ -13,7 +13,7 @@ else:
 
 import pyrogram
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
-
+from pyrogram import Client, idle
 if __name__ == "__main__" :
     # create download directory, if not exist
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
