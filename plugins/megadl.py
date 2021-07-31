@@ -111,7 +111,7 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                 message_id=usermsg.message_id
             )
         if a ==1:
-            max_file_size = 2040109465.6
+            max_file_size = 2040108421
             the_file_size = int(fsize)
             if the_file_size>max_file_size:
                 await bot.edit_message_text(
