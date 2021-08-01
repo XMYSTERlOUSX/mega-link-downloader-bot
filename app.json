@@ -39,6 +39,18 @@
       "description": "Your bot's telegram username (must enter with '@' in the front of the username)",
       "value": ""
     },
+    "OWNER_ID": {
+      "description": "Telegram User id of Owner",
+      "value": ""
+    },
+    "REDIS_URI": {
+      "description": "Redis URL, Get it from redislabs.com",
+      "value": ""
+    },
+    "REDIS_PASS": {
+      "description": "Redis Password, Get it from redislabs.com",
+      "value": ""
+    },
     "Mega_email": {
       "description": "This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.",
       "value": "",
