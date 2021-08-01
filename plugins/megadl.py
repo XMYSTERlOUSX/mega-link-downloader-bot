@@ -18,6 +18,7 @@ import time
 from datetime import datetime
 from asyncio import get_running_loop
 from PIL import Image
+
 from functools import partial
 
 # the secret configuration specific things
