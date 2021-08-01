@@ -29,4 +29,4 @@ class Config(object):
     #If deploying on vps edit the above value as example := REDIS_PASS = "Your-Redis-Password-inside-inverted-commas."
 
     DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location (Don't change anything in this field!)
-    
+    ADMIN_LOCATION = "./ADOWNLOADS" # The download location (Don't change anything in this field!)
