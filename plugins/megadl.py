@@ -37,6 +37,8 @@ logging.getLogger("pyrogram").setLevel(logging.WARNING)
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 
+from database.blacklist import check_blacklist
+from database.userchats import add_chat
 
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
@@ -55,6 +57,11 @@ else:
     
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def megadl(bot, update):
+    fuser = update.from_user.id
+    if check_blacklist(fuser):
+        await update.reply_text("Sorry! You are Banned!")
+        return
+    add_chat(fuser)
     url = update.text
     if "mega.nz" in url and ("folder" not in url or "#F" not in url or "#N" not in url):
         usermsg = await bot.send_message(
