@@ -15,12 +15,21 @@ else:
 from translation import Translation
 
 import pyrogram
+
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
+
+from database.blacklist import check_blacklist
+from database.userchats import add_chat
 
 from pyrogram import Client, filters
 
 @Client.on_message(filters.command("help"))
 async def help_user(bot, update):
+    fuser = update.from_user.id
+    if check_blacklist(fuser):
+        await update.reply_text("Sorry! You are Banned!")
+        return
+    add_chat(fuser)
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
@@ -32,6 +41,11 @@ async def help_user(bot, update):
     
 @Client.on_message(filters.command("start"))
 async def start(bot, update):
+    fuser = update.from_user.id
+    if check_blacklist(fuser):
+        await update.reply_text("Sorry! You are Banned!")
+        return
+    add_chat(fuser)
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT,
