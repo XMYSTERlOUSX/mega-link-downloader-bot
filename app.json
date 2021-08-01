@@ -40,15 +40,15 @@
       "value": ""
     },
     "OWNER_ID": {
-      "description": "Telegram User id of Owner",
+      "description": "Your(owner's) telegram id",
       "value": ""
     },
     "REDIS_URI": {
-      "description": "Redis URL, Get it from redislabs.com",
+      "description": "Redis Endpoint, Get this value from https://redislabs.com",
       "value": ""
     },
     "REDIS_PASS": {
-      "description": "Redis Password, Get it from redislabs.com",
+      "description": "Redis Password, Get this value from https://redislabs.com",
       "value": ""
     },
     "Mega_email": {
