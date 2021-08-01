@@ -26,7 +26,6 @@ def get_all_chats():
         return []
     return CCH["USERS"]
 
-
 def remove_chat(id):
     CCH = get_stuff("ALLCHATS")
     if not CCH:
