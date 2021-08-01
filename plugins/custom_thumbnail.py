@@ -22,9 +22,16 @@ from pyrogram import Client, filters
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
+from database.blacklist import check_blacklist
+from database.userchats import add_chat
 
 @Client.on_message(filters.photo)
 async def save_photo(bot, update):
+    fuser = update.from_user.id
+    if check_blacklist(fuser):
+        await update.reply_text("Sorry! You are Banned!")
+        return
+    add_chat(fuser)
     if update.media_group_id is not None:
         # album is sent
         download_location = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id) + "/" + str(update.media_group_id) + "/"
