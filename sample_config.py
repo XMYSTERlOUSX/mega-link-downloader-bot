@@ -19,4 +19,14 @@ class Config(object):
     Bot_username = os.environ.get("Bot_username", "") # Your bot's telegram username (must enter with '@' in the front of the username)
     #If deploying on vps edit the above value as example := Bot_username = "Your-Bot_username-inside-inverted-commas."
     
+    OWNER_ID = os.environ.get("OWNER_ID", None) # Your bot's telegram id
+    #If deploying on vps edit the above value as example := OWNER_ID = Your-telegram id-without-inverted-commas
+    
+    REDIS_URI = os.environ.get("REDIS_URI", None) # Get This Value from https://redislabs.com
+    #If deploying on vps edit the above value as example := REDIS_URI = "Your-Redis-Endpoint-inside-inverted-commas."
+    
+    REDIS_PASS = os.environ.get("REDIS_PASS", None) # Get This Value from https://redislabs.com
+    #If deploying on vps edit the above value as example := REDIS_PASS = "Your-Redis-Password-inside-inverted-commas."
+
     DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location (Don't change anything in this field!)
+    
