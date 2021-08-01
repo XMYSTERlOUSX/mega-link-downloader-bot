@@ -1,5 +1,6 @@
 python-telegram-bot
 instaloader
+aiohttp
 beautifulsoup4
 hachoir
 numpy
@@ -8,6 +9,7 @@ pyrogram
 requests
 tgcrypto
 python-dotenv
+redis
 psycopg2-binary
 feedparser
 #mega
