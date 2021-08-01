@@ -51,7 +51,7 @@ if Config.Mega_email is not None and Config.Mega_password is not None:
     password = Config.Mega_password
     m = mega.login(email, password)
 else:
-    m = mega.login() # Here we make an anonymous, temperory account!
+    m = mega.login() # Here we make an anonymous, temporary account!
     
 @Client.on_message(filters.regex(pattern=".*http.*"))
 async def megadl(bot, update):
@@ -138,10 +138,11 @@ Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
                 thumb_image_path = Config.DOWNLOAD_LOCATION + \
                   "/" + str(update.from_user.id) + ".jpg"
                 start = datetime.now()
+                time_for_mega = time.time()
                 try:
                     # Added Loop and Partial funtions with ascyncio as a solution for the bot not responding issue!
                     loop = get_running_loop()
-                    await loop.run_in_executor(None, partial(download_with_progress, megalink, tmp_directory_for_each_user, usermsg))
+                    await loop.run_in_executor(None, partial(download_with_progress, megalink, tmp_directory_for_each_user, usermsg, time_for_mega))
                     d=1
                 except:
                     try:
@@ -371,8 +372,8 @@ async def take_screen_shot(video_file, output_directory, ttl):
     else:
         return None
 
-def download_with_progress(megalink, tmp_directory_for_each_user, usermsg):
+def download_with_progress(megalink, tmp_directory_for_each_user, usermsg, time_for_mega):
     try:
-        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg)
+        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg, process_start_time=time_for_mega)
     except Exception as e:
         logger.info(e)
