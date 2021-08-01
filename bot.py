@@ -18,6 +18,8 @@ if __name__ == "__main__" :
     # create download directory, if not exist
     if not os.path.isdir(Config.DOWNLOAD_LOCATION):
         os.makedirs(Config.DOWNLOAD_LOCATION)
+    if not os.path.isdir(Config.ADMIN_LOCATION):
+        os.makedirs(Config.ADMIN_LOCATION)
     plugins = dict(
         root="plugins"
     )
