@@ -28,5 +28,5 @@ class Config(object):
     REDIS_PASS = os.environ.get("REDIS_PASS", None) # Get This Value from https://redislabs.com
     #If deploying on vps edit the above value as example := REDIS_PASS = "Your-Redis-Password-inside-inverted-commas."
 
-    DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location (Don't change anything in this field!)
-    ADMIN_LOCATION = "./ADOWNLOADS" # The download location (Don't change anything in this field!)
+    DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location for users. (Don't change anything in this field!)
+    ADMIN_LOCATION = "./ADOWNLOADS" # The download location for auth users. (Don't change anything in this field!)
