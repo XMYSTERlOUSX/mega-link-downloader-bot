@@ -428,6 +428,7 @@ async def megadl(bot, update):
             reply_to_message_id=update.message_id
         )
 
+        
 async def progress_for_pyrogram(
     current,
     total,
@@ -470,7 +471,6 @@ async def progress_for_pyrogram(
             )
         except:
             pass
-
 
 def humanbytes(size):
     # https://stackoverflow.com/a/49361727/4723940
@@ -544,4 +544,3 @@ def split_files(download_directory, splitting_size, splitted_files_directory):
         )
     except:
         pass
-        
