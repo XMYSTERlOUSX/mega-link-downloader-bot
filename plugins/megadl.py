@@ -117,18 +117,7 @@ async def megadl(bot, update):
                     text=error_text,
                     message_id=usermsg.message_id
                 )
-            if a ==1:
-                max_file_size = 2040108421
-                the_file_size = int(fsize)
-                if the_file_size>max_file_size:
-                    await bot.edit_message_text(
-                        chat_id=update.chat.id,
-                        text=f"""Looks like your link is bigger than 2GB! <b>But due to telegram API limits I can't upload files which are bigger than 2GB🥺</b>""",
-                        message_id=usermsg.message_id
-                    )
-                else:
-                    c=1
-            if c == 1:
+            if a == 1:
                 try:
                     await bot.edit_message_text(
                         chat_id=update.chat.id,
