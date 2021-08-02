@@ -51,6 +51,4 @@ press /deletethumbnail if you want to delete the previously saved thumbnail.
 
 Ex:- <a href="https://telegra.ph/file/2177d8611f68d63a34c88.jpg">Send Like This! It's Easy🥳</a>
 
-✨ <b>I am open source so you can make your own bot from here!👇</b>
-
-https://github.com/XMYSTERlOUSX/mega-link-downloader-bot"""
+✨ <b>I am open source so you can make your own bot from here!👇</b>"""
