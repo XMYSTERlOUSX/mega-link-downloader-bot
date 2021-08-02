@@ -23,6 +23,12 @@ from database.userchats import add_chat
 
 from pyrogram import Client, filters
 
+REPLY_MARKUP = InlineKeyboardMarkup(
+    [
+        [InlineKeyboardButton("🚀 Deploy Yours Now! 😍", url="https://github.com/XMYSTERlOUSX/mega-link-downloader-bot")],
+    ]
+)
+
 @Client.on_message(filters.command("help"))
 async def help_user(bot, update):
     fuser = update.from_user.id
@@ -34,11 +40,11 @@ async def help_user(bot, update):
         chat_id=update.chat.id,
         text=Translation.HELP_USER,
         parse_mode="html",
+        reply_markup=REPLY_MARKUP,
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
 
-    
 @Client.on_message(filters.command("start"))
 async def start(bot, update):
     fuser = update.from_user.id
@@ -49,6 +55,7 @@ async def start(bot, update):
     await bot.send_message(
         chat_id=update.chat.id,
         text=Translation.START_TEXT,
+        reply_markup=REPLY_MARKUP,
         disable_web_page_preview=True,
         reply_to_message_id=update.message_id
     )
