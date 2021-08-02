@@ -28,5 +28,11 @@ class Config(object):
     REDIS_PASS = os.environ.get("REDIS_PASS", None) # Get This Value from https://redislabs.com
     #If deploying on vps edit the above value as example := REDIS_PASS = "Your-Redis-Password-inside-inverted-commas."
 
+    AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split()) # id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once!
+    
+    #If deploying on heroku separate the ids by space. (don't put commas. Only separate each of the id's with space)
+    
+    #If deploying on vps edit the above value as example := 
+    #AUTH_USERS = set(int(x) for x in (id1, id2, blabla)) 👈 Type exactly as that and seperate the id's by space.
     DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location for users. (Don't change anything in this field!)
     ADMIN_LOCATION = "./ADOWNLOADS" # The download location for auth users. (Don't change anything in this field!)
