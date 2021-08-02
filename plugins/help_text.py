@@ -21,6 +21,7 @@ from database.blacklist import check_blacklist
 from database.userchats import add_chat
 
 from pyrogram import Client, filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 REPLY_MARKUP = InlineKeyboardMarkup(
     [
