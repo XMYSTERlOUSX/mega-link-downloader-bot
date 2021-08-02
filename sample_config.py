@@ -33,6 +33,6 @@ class Config(object):
     #If deploying on heroku separate the ids by space. (don't put commas. Only separate each of the id's with space)
     
     #If deploying on vps edit the above value as example := 
-    #AUTH_USERS = set(int(x) for x in (id1, id2, blabla)) 👈 Type exactly as that and seperate the id's by space.
+    #AUTH_USERS = set(int(x) for x in (id1, id2)) 👈 Type exactly as that and replace id1 and id2 with the id's of the telegram users, who you want to allow for multitasking. You cand add many users like that!
     DOWNLOAD_LOCATION = "./DOWNLOADS" # The download location for users. (Don't change anything in this field!)
     ADMIN_LOCATION = "./ADOWNLOADS" # The download location for auth users. (Don't change anything in this field!)
