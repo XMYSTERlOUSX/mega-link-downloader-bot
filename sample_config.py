@@ -22,10 +22,10 @@ class Config(object):
     OWNER_ID = os.environ.get("OWNER_ID", None) # Your(owner's) telegram id
     #If deploying on vps edit the above value as example := OWNER_ID = Your-telegram id-without-inverted-commas
     
-    REDIS_URI = os.environ.get("REDIS_URI", None) # Get This Value from https://redislabs.com
+    REDIS_URI = os.environ.get("REDIS_URI", None) # Get This Value from https://app.redislabs.com/#/login
     #If deploying on vps edit the above value as example := REDIS_URI = "Your-Redis-Endpoint-inside-inverted-commas."
     
-    REDIS_PASS = os.environ.get("REDIS_PASS", None) # Get This Value from https://redislabs.com
+    REDIS_PASS = os.environ.get("REDIS_PASS", None) # Get This Value from https://app.redislabs.com/#/login
     #If deploying on vps edit the above value as example := REDIS_PASS = "Your-Redis-Password-inside-inverted-commas."
 
     AUTH_USERS = set(int(x) for x in os.environ.get("AUTH_USERS", "").split()) # id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once!
