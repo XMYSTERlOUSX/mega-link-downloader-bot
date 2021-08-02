@@ -3,7 +3,6 @@
   "description": "This is a telegram bot to download mega.nz links.",
   "keywords": [
     "telegram",
-    "best",
     "mega.nz",
     "downloader",
     "open",
@@ -49,11 +48,11 @@
       "required": false
     },
     "REDIS_URI": {
-      "description": "Redis Endpoint, Get this value from https://redislabs.com",
+      "description": "Redis Endpoint, Get this value from https://app.redislabs.com/#/login",
       "value": ""
     },
     "REDIS_PASS": {
-      "description": "Redis Password, Get this value from https://redislabs.com",
+      "description": "Redis Password, Get this value from https://app.redislabs.com/#/login",
       "value": ""
     },
     "Mega_email": {
