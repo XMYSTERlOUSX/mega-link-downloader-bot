@@ -15,7 +15,6 @@ else:
 from translation import Translation
 
 import pyrogram
-
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from database.blacklist import check_blacklist
