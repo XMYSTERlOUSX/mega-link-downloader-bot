@@ -87,11 +87,7 @@ async def megadl(bot, update):
 
     Make sure your link is <b>Valid (not expired or been removed)</b>
 
-    Make sure your link is <b>not password protected or encrypted or private</b>
-
-    Make sure your link is <b>not a folder link (must be a file link)</b>
-
-    Make sure your link is <b>not bigger than 2GB(Telegram Api limits😕)</b>"""
+    Make sure your link is <b>not password protected or encrypted or private</b>"""
             try:
                 linkinfo = m.get_public_url_info(url)
                 logger.info(linkinfo)
