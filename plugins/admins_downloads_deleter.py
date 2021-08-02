@@ -10,7 +10,7 @@ else:
 
 @Client.on_message(filters.command("delmyfolder"))
 async def megadl(bot, update):
-    if update.from_user.id == Config.OWNER_ID:
+    if update.from_user.id == int(Config.OWNER_ID):
         allowed=1
     elif update.from_user.id in Config.AUTH_USERS:
         allowed=1
