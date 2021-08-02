@@ -12,5 +12,5 @@ python-dotenv
 redis
 psycopg2-binary
 feedparser
-#mega
+filesplit
 git+https://github.com/XMYSTERlOUSX/mega.py
