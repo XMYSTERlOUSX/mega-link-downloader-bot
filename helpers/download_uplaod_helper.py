@@ -63,7 +63,6 @@ async def send_splitted_file(bot, update, tg_send_type, thumb_image_path, splite
             height= 200,
             supports_streaming=True,
             thumb=thumb_image_path,
-            # reply_markup=reply_markup,
             reply_to_message_id=update.message_id,
             progress=progress_for_pyrogram,
             progress_args=(
@@ -74,21 +73,22 @@ async def send_splitted_file(bot, update, tg_send_type, thumb_image_path, splite
         )
     elif tg_send_type == "doc":
         await update.reply_chat_action("upload_document")
-            megadoc = await bot.send_document(
-                chat_id=update.chat.id,
-                document=splited_file,
-                thumb=thumb_image_path,
-                caption=description,
-                parse_mode="HTML",
-                # reply_markup=reply_markup,
-                reply_to_message_id=update.message_id,
-                progress=progress_for_pyrogram,
-                progress_args=(
-                    Translation.UPLOAD_START,
-                    usermsg,
-                    start_time
-                )
+        megadoc = await bot.send_document(
+            chat_id=update.chat.id,
+            document=splited_file,
+            thumb=thumb_image_path,
+            caption=description,
+            parse_mode="HTML",
+            reply_to_message_id=update.message_id,
+            progress=progress_for_pyrogram,
+            progress_args=(
+                Translation.UPLOAD_START,
+                usermsg,
+                start_time
             )
+        )
+        
+        
 
 async def send_file(bot, update, tg_send_type, thumb_image_path, download_directory, tmp_directory_for_each_user, description, usermsg)
     width = 0
@@ -134,7 +134,6 @@ async def send_file(bot, update, tg_send_type, thumb_image_path, download_direct
             height= 200,
             supports_streaming=True,
             thumb=thumb_image_path,
-            # reply_markup=reply_markup,
             reply_to_message_id=update.message_id,
             progress=progress_for_pyrogram,
             progress_args=(
@@ -151,7 +150,6 @@ async def send_file(bot, update, tg_send_type, thumb_image_path, download_direct
             thumb=thumb_image_path,
             caption=description,
             parse_mode="HTML",
-            # reply_markup=reply_markup,
             reply_to_message_id=update.message_id,
             progress=progress_for_pyrogram,
             progress_args=(
