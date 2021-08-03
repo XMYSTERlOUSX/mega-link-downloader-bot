@@ -88,8 +88,6 @@ async def send_splitted_file(bot, update, tg_send_type, thumb_image_path, splite
             )
         )
         
-        
-
 async def send_file(bot, update, tg_send_type, thumb_image_path, download_directory, tmp_directory_for_each_user, description, usermsg)
     width = 0
     height = 0
@@ -158,6 +156,12 @@ async def send_file(bot, update, tg_send_type, thumb_image_path, download_direct
                 start_time
             )
         )
+
+def download_with_progress(megalink, tmp_directory_for_each_user, usermsg, time_for_mega):
+    try:
+        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg, process_start_time=time_for_mega)
+    except Exception as e:
+        logger.info(e)
 
 async def progress_for_pyrogram(
     current,
@@ -256,9 +260,3 @@ async def take_screen_shot(video_file, output_directory, ttl):
         return out_put_file_name
     else:
         return None
-      
-def download_with_progress(megalink, tmp_directory_for_each_user, usermsg, time_for_mega):
-    try:
-        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg, process_start_time=time_for_mega)
-    except Exception as e:
-        logger.info(e)
