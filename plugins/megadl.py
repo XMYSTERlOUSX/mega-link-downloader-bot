@@ -32,7 +32,9 @@ from translation import Translation
 
 import pyrogram
 from pyrogram import Client, filters
+
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
