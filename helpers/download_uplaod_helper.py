@@ -19,7 +19,7 @@ else:
 from translation import Translation
 
 
-async def send_splitted_file(bot, update, tg_send_type, thumb_image_path, splited_file, tmp_directory_for_each_user, description, usermsg)
+async def send_splitted_file(bot, update, tg_send_type, thumb_image_path, splited_file, tmp_directory_for_each_user, description, usermsg):
     width = 0
     height = 0
     duration = 0
@@ -88,7 +88,7 @@ async def send_splitted_file(bot, update, tg_send_type, thumb_image_path, splite
             )
         )
         
-async def send_file(bot, update, tg_send_type, thumb_image_path, download_directory, tmp_directory_for_each_user, description, usermsg)
+async def send_file(bot, update, tg_send_type, thumb_image_path, download_directory, tmp_directory_for_each_user, description, usermsg):
     width = 0
     height = 0
     duration = 0
