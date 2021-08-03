@@ -18,7 +18,7 @@ import time
 from datetime import datetime
 from asyncio import get_running_loop
 
-from helpers.download_uplaod_helper import send_splitted_file, send_file, download_with_progress
+from helpers.download_uplaod_helper import send_splitted_file, send_file
 from helpers.files_spliiting import split_files
 
 from functools import partial
@@ -272,3 +272,9 @@ async def megadl(bot, update):
             text=f"""<b>I am a mega.nz link downloader bot! 😑</b>\n\nThis not a mega.nz link. 😡""",
             reply_to_message_id=update.message_id
         )
+
+def download_with_progress(megalink, tmp_directory_for_each_user, usermsg, time_for_mega):
+    try:
+        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg, process_start_time=time_for_mega)
+    except Exception as e:
+        logger.info(e)
