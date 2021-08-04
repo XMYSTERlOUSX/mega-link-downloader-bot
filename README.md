@@ -23,7 +23,7 @@ Please be kind to star and fork this repo!✨😇
  - Custom caption support!
  - Attractive progress bar when downloading and uploading files! 🙈
  - Ban unwanted users!
- - See your bot users' count!
+ - See your bot's user count!
  - Broadcast any message to every user of your bot!
  - Abilty to download any file under 5GB! (If you provide a pro/business account when deoloying there will be no file size limits! 😍)
 
