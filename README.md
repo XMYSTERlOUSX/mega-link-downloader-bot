@@ -144,6 +144,10 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 - `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.
 - `Mega_password` - This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.
 - `Bot_username` - Your bot's telegram username. (must enter with '@' in the front of the username)
+- `AUTH_USERS` - Id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once!
+- `OWNER_ID` - Your(owner's) telegram id
+- `REDIS_URI` - Get This Value from https://app.redislabs.com/#/login
+- `REDIS_PASS` - Get This Value from https://app.redislabs.com/#/login
 
 ---
 
