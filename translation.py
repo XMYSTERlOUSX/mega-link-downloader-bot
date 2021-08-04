@@ -14,9 +14,11 @@ Just enter your mega.nz link and I will return the file/video to you!😇
 
 💠 I can set custom captions and custom thumbnails too!
 
-✨ <b>I am open source so you can make your own bot from here!👇</b>
+💠 I can download links which are bigger than 2GB too! 😍
 
-https://github.com/XMYSTERlOUSX/mega-link-downloader-bot"""
+Press /help for more details!
+
+✨ <b>I am open source so you can make your own bot from here!👇</b>"""
     
     DOWNLOAD_START = "𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝘁𝗼 𝗠𝘆 𝗦𝗲𝗿𝘃𝗲𝗿📥"
     UPLOAD_START = "𝗨𝗽𝗹𝗼𝗮𝗱𝗶𝗻𝗴 𝗧𝗼 𝗧𝗲𝗹𝗲𝗴𝗿𝗮𝗺 𝗡𝗼𝘄  📤..."
@@ -49,6 +51,8 @@ press /deletethumbnail if you want to delete the previously saved thumbnail.
 
 💠 Select an uploaded file/video or forward me <b>Any Telegram File</b> and Just write the text you want to be on the file as a reply to the File by selecting it (as replying to a message😅) and the text you wrote will be attached as caption!😍
 
-Ex:- <a href="https://telegra.ph/file/2177d8611f68d63a34c88.jpg">Send Like This! It's Easy🥳</a>
+Ex:- <a href="https://telegra.ph/file/bdc35efc07712050bc418.jpg">Send Like This! It's Easy🥳</a>
+
+<b>Note</b> :- You can download links which are bigger than 2GB from me too! Due to telegram API limits I can't upload files which are bigger than 2GB so I will split your file and upload it to you!
 
 ✨ <b>I am open source so you can make your own bot from here!👇</b>"""
