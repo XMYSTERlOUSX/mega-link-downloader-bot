@@ -22,16 +22,12 @@ Please be kind to star and fork this repo!✨😇
  - Custom thumbnail support!
  - Custom caption support!
  - Attractive progress bar when downloading and uploading files! 🙈
+ - Ban unwanted users!
+ - See your bot users' count!
+ - Broadcast any message to every user of your bot!
  - Abilty to download any file under 5GB! (If you provide a pro/business account when deoloying there will be no file size limits! 😍)
 
 <b>Note</b> :- Due to telegram API limits I can't upload files which are bigger than 2GB so such files will be spliited and uploaded to you!
-
----
-
-### More features that I can add! (easily) 😍😋
-- Feature of uploading telegram-files / direct-links to your mega account!
-- A messgae broadcasting system for users!
-- Un-wanted users blacklisting system!
 
 ---
 
