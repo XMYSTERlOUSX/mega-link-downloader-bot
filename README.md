@@ -17,7 +17,7 @@ Please be kind to star and fork this repo!✨😇
 ## Features 💫
  - Mega accounts are not needed!
  - Parellel download are supported! (This means many users can use the bot at the same time. 😇)
- - Multitasking is also supported ! (This means You(owner) and telegram users who you set as auth users will be able to download multiple links at the same time! 😋)
+ - Multitasking is also supported ! (This means You (owner) and telegram users who you set as auth users will be able to download multiple links at the same time! 😋)
  - No quota limits will be occured!
  - Custom thumbnail support!
  - Custom caption support!
