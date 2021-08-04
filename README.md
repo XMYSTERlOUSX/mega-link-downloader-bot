@@ -38,8 +38,10 @@ Please be kind to star and fork this repo!✨😇
 
 <br>
 
-- Choose Europe as server location when deploying. (Beacuse downloadings will be fast!).
+- Choose Europe as server location when deploying. (Beacuse downloadings will be a little fast!).
 - Examples of needed bot variables are mentioned below in this readme!
+ 
+ <b>Note</b> :- It's best if you deploy on a vps because with heroku downloadings can be slow! 😕
 
 <br>
   
@@ -51,7 +53,7 @@ Please be kind to star and fork this repo!✨😇
 
 <br>
 
-**Make a vps (Recommended - Ubuntu 20.04 (LTS) x64 vps from a location/region near to New Zealand) and log in to it.**
+**Make a vps (Recommended - Ubuntu 20.04 (LTS) x64 vps from a location/region near New Zealand) and log in to it.**
 - Then execute the below commands. 👇
 ```sh  
 sudo apt update
