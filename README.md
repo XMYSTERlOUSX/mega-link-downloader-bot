@@ -49,7 +49,7 @@ Please be kind to star and fork this repo!✨😇
 </details>
 
 <details>
-  <summary><b>Deploy to your VPS</b></summary>
+  <summary><b>Deploying on a VPS</b></summary>
 
 <br>
 
