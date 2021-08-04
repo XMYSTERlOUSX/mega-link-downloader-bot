@@ -43,7 +43,7 @@
       "value": ""
     },
     "AUTH_USERS": {
-      "description": "id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once! In heroku separate the ids by space. (don't put commas. Only separate each of the id's with space",
+      "description": "Id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once! In heroku separate the ids by space. (don't put commas. Only separate each of the id's with space",
       "value": "1023936257 1845875276",
       "required": false
     },
