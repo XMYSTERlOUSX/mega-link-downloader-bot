@@ -21,6 +21,8 @@ Please be kind to star and fork this repo!✨😇
  - Custom thumbnail support!
  - Custom caption support!
  - Ability to download any file under 2GB and return as a telegram file!
+ - Abilty to download upto size of 5GB files! (If you provide a pro/business account when deoloying there will be no file size limits! 😍)
+<b>Note</b> :- Due to telegram API limits I can't upload files which are bigger than 2GB so the files will be spliited and uploaded to you!
 
 ---
 
