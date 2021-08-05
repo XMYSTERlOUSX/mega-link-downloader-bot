@@ -16,16 +16,16 @@ Please be kind to star and fork this repo!✨😇
 
 ## Features 💫
  - Mega accounts are not needed!
- - Parellel download are supported! (This means many users can use the bot at the same time. 😇)
+ - Parallel download are supported! (This means many users can use the bot at the same time. 😇)
  - Multitasking is also supported ! (This means You (owner) and telegram users who you set as auth users will be able to download multiple links at the same time! 😋)
- - No quota limits will be occured!
+ - No quota limits will be occurred!
  - Custom thumbnail support!
  - Custom caption support!
  - Attractive progress bar when downloading and uploading files! 🙈
  - Ban unwanted users!
  - See your bot's user count!
  - Broadcast any message to every user of your bot!
- - Abilty to download any file under 5GB! (If you provide a pro/business account when deoloying there will be no file size limits! 😍)
+ - Ability to download any file under 5GB! (If you provide a pro/business account when deploying there will be no file size limits! 😍)
 
 <b>Note</b> :- Due to telegram API limits I can't upload files which are bigger than 2GB so such files will be spliited and uploaded to you!
 
