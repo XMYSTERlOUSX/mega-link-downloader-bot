@@ -204,4 +204,5 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 ---
 
 #### LICENSE
+
 - GPLv3
