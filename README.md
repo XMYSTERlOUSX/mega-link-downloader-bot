@@ -168,19 +168,20 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 <br>
 
-- `/delmyfolder` - To delete the download folder of the owner and the auth users. 
-(Since owner and auth users support multitasking their downloads folder will not get deleted automatically!. So If you want to clean up the server storage hit that command and delete your download folder after all of your current downloads got uploaded. If you are on heroku free dynos this doesn't really matter but if you are on a vps please remember to do it once in a while!)
-<b>Note :- Do not send this command while links are being downloaded and uploaded!</b>
+- `/delmyfolder` - To delete the download folder of the owner and the auth users. <br>
+(Since owner and auth users support multitasking their downloads folder will not get deleted automatically!. So If you want to clean up the server storage hit that command and delete your download folder after all of your current downloads got uploaded. If you are on heroku free dynos this doesn't really matter but if you are on a vps please remember to do it once in a while!)<br>
+<b>Note :- Do not send this command while links are being downloaded and uploaded!</b><br>
  
-- `/black` - To ban unwanted users from the bot! 
-(<b>Syntax of sending the commnad to the bot is</b>:- <code>/black</code> <i>userid</i>)
+- `/black` - To ban unwanted users from the bot! <br>
+(<b>Syntax of sending the commnad to the bot is</b>:- <code>/black</code> <i>userid</i>)<br>
 
-- `/unblack` - To unban banned users from the bot! 
- (<b>Syntax of sending the commnad to the bot is</b>:- <code>/unblack</code> <i>userid</i>)
+- `/unblack` - To unban banned users from the bot! <br>
+(<b>Syntax of sending the commnad to the bot is</b>:- <code>/unblack</code> <i>userid</i>)<br>
  
-- `/lisblack` - To get the telegram id list of banned user's from the bot!
+- `/lisblack` - To get the telegram id list of banned user's from the bot!<br>
  
- - `/broadcast` - To broadcast a message to the all the users of the bot! (<b>Syntax of sending the commnad to the bot is</b>:- <code>/broadcast</code> <i>as a reply to the message that you want to broadcast!</i>)
+ - `/broadcast` - To broadcast a message to all the users of the bot! <br>
+(<b>Syntax of sending the commnad to the bot is</b>:- <code>/broadcast</code> <i>as a reply to the message that you want to broadcast!</i>)<br>
 
  - `/stats` - To get the total number of users who has used your bot!
 </details>
