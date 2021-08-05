@@ -34,7 +34,7 @@ Please be kind to star and fork this repo!✨😇
 ## Deploying Methods
 
 <details>
-  <summary><b>Deploying to Heroku (The Easiest Way)</b></summary>
+  <summary><b>Deploying to Heroku</b></summary>
 
 <br>
 
