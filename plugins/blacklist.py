@@ -15,7 +15,7 @@ async def black_user(_, message):
     try:
         bl = int(message.text.split(" ", maxsplit=1)[1])
     except IndexError:
-        return await message.reply_text("<b>Send This command in the below format👇</b>\n\n<code>/black <serid</code> (Replace 'userid' with the user's telegram id of who you want to ban from the bot!)")
+        return await message.reply_text("<b>Send This command in the below format👇</b>\n\n<code>/black userid</code> (Replace 'userid' with the user's telegram id of who you want to ban from the bot!)")
     add_blacklist(bl)
     await message.reply_text(f"Blacklisted {bl} !")
 
