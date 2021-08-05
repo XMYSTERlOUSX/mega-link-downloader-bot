@@ -151,6 +151,32 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 ---
 
+## Bot Commands
+
+<details>
+  <summary><b>Normal User Commands</b></summary>
+
+<br>
+
+- <code>/start</code - To check if the bot is alive!
+- `/help` - To get the detailed help guide of using the bot!
+- `/deletethumbnail` - To delete your saved custom thumbnail!
+</details>
+
+<details>
+  <summary><b>Admin Commands</b></summary>
+
+<br>
+
+- `
+
+
+
+
+
+
+---
+
 ### Reason for making this open source :-
 
 First of all I am an absolute noob😇🥺 (You can ensure it if you see the code even just once😂)
