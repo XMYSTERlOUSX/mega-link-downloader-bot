@@ -158,7 +158,7 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 <br>
 
-- <code>/start</code - To check if the bot is alive!
+- `/start` - To check if the bot is alive!
 - `/help` - To get the detailed help guide of using the bot!
 - `/deletethumbnail` - To delete your saved custom thumbnail!
 </details>
@@ -168,7 +168,7 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 <br>
 
-- `
+- `delmyfolder`
 
 
 
