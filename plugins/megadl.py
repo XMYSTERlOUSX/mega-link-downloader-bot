@@ -206,7 +206,7 @@ async def megadl(bot, update):
                                         pass
                             except:
                                 await bot.edit_message_text(
-                                    text="sorry some error occured!",
+                                    text="sorry some error occurred!",
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
