@@ -196,7 +196,6 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 ## Credits, and Thanks to
 
-* [AnyDLBot](https://github.com/SpEcHiDe/AnyDLBot) of [SpEcHlDe](https://telegram.dog/ThankTelegram) for the base code that I have used for this.
 * [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) of [mega.nz-API](https://mega.nz/API)
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
