@@ -168,12 +168,18 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 <br>
 
-- `delmyfolder`
+- `/delmyfolder` - To delete the download folder of the owner and the auth users. (Since owner and auth users support multitasking their downloads folder will not get deleted automatically!. So If you want to clean up the server storage hit that command and delete your download folder after your uploads gets finished. If you are on heroku free dynos this doesn't really matter but if you are on a vps please remember to do it once in a while!)
+ 
+- `/black` - To ban unwanted users from the bot! (<b>Syntax of sending the commnad to the bot is</b>:- <code>/black</code> <i>userid</i>)
 
+- `/unblack` - To unban banned users from the bot! (<b>Syntax of sending the commnad to the bot is</b>:- <code>/unblack</code> <i>userid</i>)
+ 
+- `/lisblack` - To get the telegram id list of banned user's from the bot!
+ 
+ - `/broadcast` - To broadcast a message to the all the users of the bot! (<b>Syntax of sending the commnad to the bot is</b>:- <code>/broadcast</code> <i>as a reply to the message that you want to broadcast!</i>)
 
-
-
-
+ - `/stats` - To get the total number of users who has used your bot!
+</details>
 
 ---
 
