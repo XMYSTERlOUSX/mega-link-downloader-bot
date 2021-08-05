@@ -23,7 +23,7 @@ async def megadl(bot, update):
                 shutil.rmtree(admin_downloads_directory)
                 await bot.send_message(
                     chat_id=update.chat.id,
-                    text=f"""<b>The download directory for admins and auth users has been deleted successfully! ✅</b>\n\nNow your server will be fresh as new! 😇\n\n<b>What this command does:-</b> Since owner and auth users support multitasking their downloads folder will not get deleted automatically!. So If you want to clean up the server storage hit that command and delete your download folder after your uploads gets finished. If you are on heroku free dynos this doesn't really matter but if you are on a vps please remember to do it once in a while!""",
+                    text=f"""<b>The download directory for admins and auth users has been deleted successfully! ✅</b>\n\nNow your server will be fresh as new! 😇\n\n<b>What this command does :-</b> Since owner and auth users support multitasking their downloads folder will not get deleted automatically!. So If you want to clean up the server storage hit that command and delete your download folder afterr all of your current downloads got uploaded. If you are on heroku free dynos this doesn't really matter but if you are on a vps please remember to do it once in a while!\n\n<b>Note :- Do not send this command while links are being downloaded and uploaded!</b>""",
                     reply_to_message_id=update.message_id
                 )
             except:
