@@ -197,6 +197,7 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 ## Credits, and Thanks to
 
 * [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) of [mega.nz-API](https://mega.nz/API)
+* [ProThinkerGang](https://github.com/ProThinkerGang) for the database module code!
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
@@ -204,5 +205,4 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 ---
 
 #### LICENSE
-
 - GPLv3
