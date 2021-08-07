@@ -152,8 +152,9 @@ async def megadl(bot, update):
                         e_response = stderr.decode().strip()
                         t_response = stdout.decode().strip()
                         d=1
-                    except:
+                    except Exception as e:
                         try:
+                            logger.info(e)
                             await bot.edit_message_text(
                                 text=error_text,
                                 chat_id=update.chat.id,
