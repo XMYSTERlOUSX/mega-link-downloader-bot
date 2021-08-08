@@ -143,19 +143,11 @@ async def megadl(bot, update):
                     time_for_mega = time.time()
                     try:
                         # Added Loop and Partial funtions with ascyncio as a solution for the bot not responding issue!
-                        process = await asyncio.create_subprocess_exec(
-                            *["megadl", megalink, "--path", tmp_directory_for_each_user],
-                            # stdout must a pipe to be accessible as process.stdout
-                            stdout=asyncio.subprocess.PIPE,
-                            stderr=asyncio.subprocess.PIPE,
-                        )
-                        stdout, stderr = await process.communicate()
-                        e_response = stderr.decode().strip()
-                        t_response = stdout.decode().strip()
+                        loop = get_running_loop()
+                        await loop.run_in_executor(None, partial(download_with_progress, megalink, tmp_directory_for_each_user, usermsg, time_for_mega))
                         d=1
-                    except Exception as e:
+                    except:
                         try:
-                            logger.info(e)
                             await bot.edit_message_text(
                                 text=error_text,
                                 chat_id=update.chat.id,
@@ -165,7 +157,7 @@ async def megadl(bot, update):
                                 shutil.rmtree(tmp_directory_for_each_user)
                         except:
                             pass
-                    if t_response:
+                    if d == 1:
                         file_size = os.stat(download_directory).st_size
                         end_one = datetime.now()
                         time_taken_for_download = (end_one -start).seconds
