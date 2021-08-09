@@ -4,6 +4,7 @@ logging.basicConfig(level=logging.DEBUG,
 logger = logging.getLogger(__name__)
 
 import os
+import asyncio
 from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
 import math
@@ -90,3 +91,34 @@ async def split__video_files(download_directory, splitting_size, splitted_files_
     except Exception as e:
         logger.info(e)
         pass
+
+      
+async def cult_small_video(download_directory, out_put_file_name, start_time, end_time):
+    file_genertor_command = [
+        "ffmpeg",
+        "-hide_banner",
+        "-i",
+        download_directory,
+        "-ss",
+        start_time,
+        "-to",
+        end_time,
+        "-async",
+        "1",
+        "-strict",
+        "-2",
+        "-c",
+        "copy",
+        out_put_file_name
+    ]
+    process = await asyncio.create_subprocess_exec(
+        *file_genertor_command,
+        # stdout must a pipe to be accessible as process.stdout
+        stdout=aio.subprocess.PIPE,
+        stderr=aio.subprocess.PIPE,
+    )
+    # Wait for the subprocess to finish
+    stdout, stderr = await process.communicate()
+    e_response = stderr.decode().strip()
+    t_response = stdout.decode().strip()
+    return out_put_file_name
