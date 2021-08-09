@@ -29,7 +29,7 @@ def split_files(download_directory, splitting_size, splitted_files_directory):
     except:
         pass
 
-async def split__video_files(download_directory, splitting_size, splitted_files_directory, fname):
+async def split_video_files(download_directory, splitting_size, splitted_files_directory, fname):
     metadata = extractMetadata(createParser(download_directory))
     if metadata.has("duration"):
         total_duration = metadata.get('duration').seconds
