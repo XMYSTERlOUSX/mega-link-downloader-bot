@@ -171,9 +171,12 @@ async def megadl(bot, update):
                                 splitting_size = 2040108421
                                 if not os.path.exists(splitted_files_directory):
                                     os.makedirs(splitted_files_directory)
-                                loop = get_running_loop()
-                                await loop.run_in_executor(None, partial(split_files, download_directory, splitting_size, splitted_files_directory))
-                                splitted_in_megadl = 1
+                                if tg_send_type == "vid":
+                                    await split__video_files(download_directory, splitting_size, splitted_files_directory, fname)
+                                else:
+                                    loop = get_running_loop()
+                                    await loop.run_in_executor(None, partial(split_files, download_directory, splitting_size, splitted_files_directory))
+                                    splitted_in_megadl = 1
                                 if splitted_in_megadl == 1:
                                     for root, dirs, files in os.walk(splitted_files_directory):
                                         for filename in files:
