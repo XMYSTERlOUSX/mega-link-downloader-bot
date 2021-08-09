@@ -19,7 +19,7 @@ from datetime import datetime
 from asyncio import get_running_loop
 
 from helpers.download_uplaod_helper import send_splitted_file, send_file
-from helpers.files_spliiting import split_files
+from helpers.files_spliiting import split_files, split__video_files
 
 from functools import partial
 
@@ -173,6 +173,7 @@ async def megadl(bot, update):
                                     os.makedirs(splitted_files_directory)
                                 if tg_send_type == "vid":
                                     await split__video_files(download_directory, splitting_size, splitted_files_directory, fname)
+                                    splitted_in_megadl = 1
                                 else:
                                     loop = get_running_loop()
                                     await loop.run_in_executor(None, partial(split_files, download_directory, splitting_size, splitted_files_directory))
