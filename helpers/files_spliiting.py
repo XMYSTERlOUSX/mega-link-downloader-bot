@@ -114,8 +114,8 @@ async def cult_small_video(download_directory, out_put_file_name, start_time, en
     process = await asyncio.create_subprocess_exec(
         *file_genertor_command,
         # stdout must a pipe to be accessible as process.stdout
-        stdout=aio.subprocess.PIPE,
-        stderr=aio.subprocess.PIPE,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
     )
     # Wait for the subprocess to finish
     stdout, stderr = await process.communicate()
