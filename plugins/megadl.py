@@ -18,8 +18,9 @@ import time
 from datetime import datetime
 from asyncio import get_running_loop
 
-from helpers.download_uplaod_helper import send_splitted_file, send_file
+from helpers.download_uplaod_helper import send_splitted_file, send_file, humanbytes
 from helpers.files_spliiting import split_files, split_video_files
+from .mega_logging import m
 
 from functools import partial
 
@@ -35,26 +36,16 @@ from pyrogram import Client, filters
 
 from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
 from database.blacklist import check_blacklist
 from database.userchats import add_chat
-
-from mega import Mega
-
-mega = Mega()
-
-# It is really not imprtant for you to enter your mega email or password in config variables!
-if Config.Mega_email is not None and Config.Mega_password is not None:
-    email = Config.Mega_email
-    password = Config.Mega_password
-    m = mega.login(email, password)
-else:
-    m = mega.login() # Here we make an anonymous, temporary account!
     
+downlaoding_in_megacmd = False
+
 @Client.on_message(filters.regex(pattern=".*http.*"))
-async def megadl(bot, update):
+async def mega_dl(bot, update):
+    global downlaoding_in_megacmd
     fuser = update.from_user.id
     if check_blacklist(fuser):
         await update.reply_text("Sorry! You are Banned!")
@@ -107,17 +98,21 @@ async def megadl(bot, update):
                     description_parts = fname.split(".mkv")
                     description = description_parts[0]
                     logger.info(description)
-            except:
+            except Exception as e:
+                logger.info(e)
                 await bot.edit_message_text(
                     chat_id=update.chat.id,
-                    text=error_text,
+                    text="Error: "+ e + "\n\n" + error_text,
                     message_id=usermsg.message_id
                 )
+                return
             if a == 1:
                 try:
+                    max_file_size = 2040108421
+                    the_file_size = int(fsize)
                     await bot.edit_message_text(
                         chat_id=update.chat.id,
-                        text=Translation.DOWNLOAD_START,
+                        text="<b>Files detected</b> : " + fname + "\n" + "<b>Size</b> : " + humanbytes(the_file_size) + "\n" + "\n" + Translation.DOWNLOAD_START,
                         message_id=usermsg.message_id
                     )
                     megalink = url
@@ -130,7 +125,8 @@ async def megadl(bot, update):
                     else:
                         s=0
                     if s == 1:
-                        tmp_directory_for_each_user = Config.ADMIN_LOCATION + "/" + str(update.from_user.id)
+                        admin_dir_name = str(time.time())
+                        tmp_directory_for_each_user = Config.ADMIN_LOCATION + "/" + str(update.from_user.id) + "/" + admin_dir_name
                     else:
                         tmp_directory_for_each_user = Config.DOWNLOAD_LOCATION + "/" + str(update.from_user.id)
                     if not os.path.isdir(tmp_directory_for_each_user):
@@ -139,24 +135,49 @@ async def megadl(bot, update):
                     splitted_files_directory = tmp_directory_for_each_user + "/" + str(fsize)
                     thumb_image_path = Config.DOWNLOAD_LOCATION + \
                       "/" + str(update.from_user.id) + ".jpg"
+                    cred_location = Config.CREDENTIALS_LOCATION + "/mega.ini"
                     start = datetime.now()
-                    time_for_mega = time.time()
-                    try:
-                        # Added Loop and Partial funtions with ascyncio as a solution for the bot not responding issue!
-                        loop = get_running_loop()
-                        await loop.run_in_executor(None, partial(download_with_progress, megalink, tmp_directory_for_each_user, usermsg, time_for_mega))
-                        d=1
-                    except:
+                    if downlaoding_in_megacmd:
                         try:
-                            await bot.edit_message_text(
-                                text=error_text,
-                                chat_id=update.chat.id,
-                                message_id=usermsg.message_id
-                            )
-                            if s == 0:
+                            # Using megatools for downloading links because MEGAcmd doesn't support parallel downloads at once. (This method is also speed)
+                            loop = get_running_loop()
+                            await loop.run_in_executor(None, partial(download_mega_docs, megalink, tmp_directory_for_each_user, cred_location, update))
+                            d=1
+                        except Exception as e:
+                            logger.info(e)
+                            try:
+                                await bot.edit_message_text(
+                                    text="Error: "+ e,
+                                    chat_id=update.chat.id,
+                                    message_id=usermsg.message_id
+                                )
                                 shutil.rmtree(tmp_directory_for_each_user)
-                        except:
-                            pass
+                                return
+                            except Exception as e:
+                                logger.info(e)
+                                return
+                    else:
+                        try:
+                            downlaoding_in_megacmd = True
+                            # Using MEGAcmd for downloading links! (This is the speedest way)
+                            loop = get_running_loop()
+                            await loop.run_in_executor(None, partial(download_mega_files, megalink, tmp_directory_for_each_user))
+                            d=1
+                            downlaoding_in_megacmd = False
+                        except Exception as e:
+                            logger.info(e)
+                            try:
+                                downlaoding_in_megacmd = False
+                                await bot.edit_message_text(
+                                    text="Error: "+ e,
+                                    chat_id=update.chat.id,
+                                    message_id=usermsg.message_id
+                                )
+                                shutil.rmtree(tmp_directory_for_each_user)
+                                return
+                            except Exception as e:
+                                logger.info(e)
+                                return
                     if d == 1:
                         file_size = os.stat(download_directory).st_size
                         end_one = datetime.now()
@@ -202,25 +223,23 @@ async def megadl(bot, update):
                                         disable_web_page_preview=True
                                     )
                                     try:
-                                        if s == 1:
-                                            shutil.rmtree(splitted_files_directory)
-                                        else:
-                                            shutil.rmtree(tmp_directory_for_each_user)
-                                    except:
-                                        pass
-                            except:
+                                        shutil.rmtree(tmp_directory_for_each_user)
+                                        return
+                                    except Exception as e:
+                                        logger.info(e)
+                                        return
+                            except Exception as e:
                                 await bot.edit_message_text(
-                                    text="sorry some error occurred!",
+                                    text="Error: "+ e,
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
                                 try:
-                                    if s == 1:
-                                        shutil.rmtree(splitted_files_directory)
-                                    else:
-                                        shutil.rmtree(tmp_directory_for_each_user)
-                                except:
-                                    pass
+                                    shutil.rmtree(tmp_directory_for_each_user)
+                                    return
+                                except Exception as e:
+                                    logger.info(e)
+                                    return
                         else:
                             try:
                                 await bot.edit_message_text(
@@ -238,47 +257,70 @@ async def megadl(bot, update):
                                     disable_web_page_preview=True
                                 )
                                 try:
-                                    if s == 0:
-                                        shutil.rmtree(tmp_directory_for_each_user)
-                                except:
-                                    pass
-                            except:
+                                    shutil.rmtree(tmp_directory_for_each_user)
+                                    return
+                                except Exception as e:
+                                    logger.info(e)
+                                    return
+                            except Exception as e:
+                                logger.info(e)
                                 await bot.edit_message_text(
-                                    text=error_text,
+                                    text="Error: "+ e,
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
                                 try:
-                                    if s == 0:
-                                        shutil.rmtree(tmp_directory_for_each_user)
-                                except:
-                                    pass
-                except:
+                                    shutil.rmtree(tmp_directory_for_each_user)
+                                    return
+                                except Exception as e:
+                                    logger.info(e)
+                                    return
+                except Exception as e:
+                    logger.info(e)
                     await bot.edit_message_text(
-                        text=error_text,
+                        text="Error: "+ e,
                         chat_id=update.chat.id,
                         message_id=usermsg.message_id
                     )
                     try:
-                        if s == 0:
-                            shutil.rmtree(tmp_directory_for_each_user)
-                    except:
-                        pass
+                        shutil.rmtree(tmp_directory_for_each_user)
+                        return
+                    except Exception as e:
+                        logger.info(e)
+                        return
         else:
             await bot.send_message(
                 chat_id=update.chat.id,
                 text=f"""Sorry! Folder links are not supported!""",
                 reply_to_message_id=update.message_id
             )
+            return
     else:
         await bot.send_message(
             chat_id=update.chat.id,
             text=f"""<b>I am a mega.nz link downloader bot! 😑</b>\n\nThis not a mega.nz link. 😡""",
             reply_to_message_id=update.message_id
         )
+        return
 
-def download_with_progress(megalink, tmp_directory_for_each_user, usermsg, time_for_mega):
+def download_mega_files(megalink, tmp_directory_for_each_user):
     try:
-        m.download_url(megalink, tmp_directory_for_each_user, progress_msg_for_mega=usermsg, process_start_time=time_for_mega)
+        global downlaoding_in_megacmd
+        process = subprocess.run(["mega-get", megalink, tmp_directory_for_each_user]) # If you provided a pro/business mega.nz account email and account in the config vars there will not be any quota limits!
+    except Exception as e:
+        downlaoding_in_megacmd = False
+        logger.info(e)
+
+def download_mega_docs(megalink, tmp_directory_for_each_user, cred_location, update):
+    try:
+        if os.path.exists(cred_location):
+            try:
+                process = subprocess.run(["megadl", megalink, "--path", tmp_directory_for_each_user, "--config", cred_location]) # If mega.nz credentials are provided your link will be downloaded from megatools using quota in your account!. Helps to avoid quota limits if you use a pro/business mega account!
+            except Exception as e:
+                logger.info(e)
+                update.reply_text(f"Error : `{e}` occured!\n\n<b>.Maybe because there is some error in your `mega.ini` file! Please send your file, exatly as mentioned in the readme 👉 https://github.com/XMYSTERlOUSX/mega-link-downloader-bot/blob/main/README.md</b>\n\n<i>Downloading your file now without logging in to your account...</i>", disable_web_page_preview=True)
+                process = subprocess.run(["megadl", megalink, "--path", tmp_directory_for_each_user])
+        else:
+            process = subprocess.run(["megadl", megalink, "--path", tmp_directory_for_each_user])
     except Exception as e:
         logger.info(e)
