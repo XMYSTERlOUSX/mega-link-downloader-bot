@@ -27,7 +27,8 @@ email = Config.Mega_email
 password = Config.Mega_password
 speed = "0"
 # It is really not imprtant for you to enter your mega email or password in config variables!
-if email is not None and password is not None:
+
+if email != "None" and password != "None":
     try:
         m = mega.login(email, password) # Logging into mega.py 
         logging_in_megacmd = subprocess.run(["mega-login", email, password]) # Logging into MEGAcmd (Helps to bypass quota limits if you use a pro/business account)
@@ -37,6 +38,7 @@ if email is not None and password is not None:
         m = mega.login()
 else:
     m = mega.login() # Here we make an anonymous, temporary account for mega.py!
+    speedlimit_in_megacmd = subprocess.run(["mega-speedlimit", speed])
 
 @Client.on_message(filters.command("mega_ini") & filters.user(int(Config.OWNER_ID)))
 async def log_to_megatools(client, message):
