@@ -10,13 +10,13 @@
     "mega",
     "pyrogram",
     "bot",
-    "remote",
     "uploader"
   ],
   "success_url": "https://t.me/mega_downloader_robot",
   "website": "https://github.com/XMYSTERlOUSX/mega-link-downloader-bot",
   "logo": "https://telegra.ph/file/a438489c44d17d108f7b5.jpg",
   "repository": "https://github.com/XMYSTERlOUSX/mega-link-downloader-bot",
+  "stack": "container",
   "env": {
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode! (Don't change anything in this field!)",
@@ -48,11 +48,11 @@
       "required": false
     },
     "REDIS_URI": {
-      "description": "Redis Endpoint, Get this value from https://app.redislabs.com/#/login",
+      "description": "Redis Endpoint, Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)",
       "value": ""
     },
     "REDIS_PASS": {
-      "description": "Redis Password, Get this value from https://app.redislabs.com/#/login",
+      "description": "Redis Password, Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)",
       "value": ""
     },
     "Mega_email": {
