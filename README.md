@@ -175,7 +175,7 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 - `TG_BOT_TOKEN` - Make a bot from https://t.me/BotFather and enter the token here.
 - `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features. (Used for downloading links with the download engine 'MEGAcmd' which is used in this repository.)
 - `Mega_password` - This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features. (Used for downloading links with the download engine 'MEGAcmd' which is used in this repository.)
-- `Bot_username` - Your bot's telegram username. (must enter with '@' in the front of the username)
+- `Bot_username` - Your bot's telegram username. (must enter with '@' in the front of the username.)
 - `AUTH_USERS` - Id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once!
 - `OWNER_ID` - Your(owner's) telegram id
 - `REDIS_URI` - Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)
