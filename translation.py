@@ -34,7 +34,7 @@ Press /help for more details!
 
 <b>Important:-</b> 
 
-- Folder links are not supported and your file should not be bigger than 2GB because I can't upload files which are bigger than 2Gb due to telegram API limits!
+- Folder links are not supported.
 
 - Your link should be valid(not expired or been removed) and should not be password protected or encrypted or private!
 
