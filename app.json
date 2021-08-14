@@ -23,7 +23,7 @@
       "value": "ANYTHING"
     },
     "TG_BOT_TOKEN": {
-      "description": "Make a bot from https://t.me/BotFather and enter the token here",
+      "description": "Make a bot from https://t.me/BotFather and enter the token here.",
       "value": ""
     },
     "APP_ID": {
