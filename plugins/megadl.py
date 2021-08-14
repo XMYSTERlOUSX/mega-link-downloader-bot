@@ -139,7 +139,7 @@ async def mega_dl(bot, update):
                     start = datetime.now()
                     if downlaoding_in_megacmd:
                         try:
-                            # Using megatools for downloading links because MEGAcmd doesn't support parallel downloads at once. (This method is also speed)
+                            # Using megatools for downloading links because MEGAcmd doesn't support parallel downloads at once. (This method is also speed.)
                             loop = get_running_loop()
                             await loop.run_in_executor(None, partial(download_mega_docs, megalink, tmp_directory_for_each_user, cred_location, update))
                             d=1
@@ -159,7 +159,7 @@ async def mega_dl(bot, update):
                     else:
                         try:
                             downlaoding_in_megacmd = True
-                            # Using MEGAcmd for downloading links! (This is the speedest way)
+                            # Using MEGAcmd for downloading links! (This is the speedest way.)
                             loop = get_running_loop()
                             await loop.run_in_executor(None, partial(download_mega_files, megalink, tmp_directory_for_each_user))
                             d=1
