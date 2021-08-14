@@ -48,11 +48,11 @@
       "required": false
     },
     "REDIS_URI": {
-      "description": "Redis Endpoint, Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)",
+      "description": "Redis Endpoint, Get This Value from http://redislabs.com/try-free (If you don't know how to obtain these values a complete video tutorial is available here:- https://t.me/botzupdate/5)",
       "value": ""
     },
     "REDIS_PASS": {
-      "description": "Redis Password, Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)",
+      "description": "Redis Password, Get This Value from http://redislabs.com/try-free (If you don't know how to obtain these values a complete video tutorial is available here:- https://t.me/botzupdate/5)",
       "value": ""
     },
     "Mega_email": {
