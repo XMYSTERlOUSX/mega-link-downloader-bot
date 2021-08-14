@@ -19,7 +19,7 @@ Please be kind to star and fork this repo!✨😇
  - Uses two download engines for downloading links!
  - Speed improved with heroku and vps too!
  - Parallel downloads are supported! (This means many users can use the bot at the same time. 😇)
- - Multitasking is also supported ! (This means You (owner) and telegram users who you set as auth users will be able to download multiple links at the same time! 😋)
+ - Multitasking is also supported! (This means You (owner) and telegram users who you set as auth users will be able to download multiple links at the same time! 😋)
  - Custom thumbnail support!
  - Custom caption support!
  - Ban unwanted users!
