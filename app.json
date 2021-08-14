@@ -56,13 +56,13 @@
       "value": ""
     },
     "Mega_email": {
-      "description": "This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features. (Keep as 'None' if you don't have one)",
-      "value": "None",
+      "description": "This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.",
+      "value": "",
       "required": false
     },
     "Mega_password": {
-      "description": "This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features. (Keep as 'None' if you don't have one)",
-      "value": "None",
+      "description": "This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.",
+      "value": "",
       "required": false
     }
   },
