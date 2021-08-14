@@ -10,7 +10,7 @@ if bool(os.environ.get("WEBHOOK", False)):
 else:
     from config import Config
 
-@Client.on_message(filters.reply & filters.text & ~filters.edited & ~filters.group & ~filters.command("deletethumbnail"))
+@Client.on_message(filters.reply & filters.text & ~filters.edited & ~filters.group & ~filters.command("deletethumbnail") & ~filters.command("mega_ini"))
 async def newcap(_, message):
     fuser = message.from_user.id
     if check_blacklist(fuser):
