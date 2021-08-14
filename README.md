@@ -16,19 +16,21 @@ Please be kind to star and fork this repo!✨😇
 
 ## Features 💫
  - Mega accounts are not needed!
- - Parallel download are supported! (This means many users can use the bot at the same time. 😇)
+ - Uses two download engines for downloading links!
+ - Speed improved with heroku and vps too!
+ - Parallel downloads are supported! (This means many users can use the bot at the same time. 😇)
  - Multitasking is also supported ! (This means You (owner) and telegram users who you set as auth users will be able to download multiple links at the same time! 😋)
- - No quota limits will be occurred!
  - Custom thumbnail support!
  - Custom caption support!
- - Attractive progress bar when downloading and uploading files! 🙈
  - Ban unwanted users!
  - See your bot's user count!
  - Broadcast any message to every user of your bot!
  - Ability to download any file under 5GB! (If you provide a pro/business account when deploying there will be no file size limits! 😍)
 
-<b>Note</b> :- Due to telegram API limits I can't upload files which are bigger than 2GB so such files will be spliited and uploaded to you!
-
+<b>Notes</b> :- 
+1. Due to telegram API limits I can't upload files which are bigger than 2GB so such files will be spliited and uploaded to you!
+2. Quota limits can occur if you don't provide a pro/business account!
+3. Folder support is not implemented yet but can be added in the near future!
 ---
 
 ## Deploying Methods
@@ -38,10 +40,9 @@ Please be kind to star and fork this repo!✨😇
 
 <br>
 
-- Choose Europe as server location when deploying. (Beacuse downloadings will be a little fast!).
 - Examples of needed bot variables are mentioned below in this readme!
  
- <b>Note</b> :- It's best if you deploy on a vps because with heroku downloadings can be slow! 😕
+ <b>Note</b> :- Downloads are speed on heroku too! 😍
 
 <br>
   
@@ -53,7 +54,7 @@ Please be kind to star and fork this repo!✨😇
 
 <br>
 
-**Make a vps (Recommended - Ubuntu 20.04 (LTS) x64 vps from a location/region near New Zealand) and log in to it.**
+**Make an Ubuntu 20.04 (LTS) x64 vps!** (All the commands below are given assuming that you use a Ubuntu 20.04 (LTS) x64 vps!)
 - Then execute the below commands. 👇
 ```sh  
 sudo apt update
@@ -68,8 +69,39 @@ apt-get update
 apt-get install tmux
 ```
 ```sh  
-tmux
+apt install meson
 ```
+```sh  
+sudo apt-get install libtool libglib2.0-dev gobject-introspection libgmp3-dev nettle-dev asciidoc glib-networking openssl libcurl4-openssl-dev libssl-dev
+```
+```sh  
+git clone https://github.com/XMYSTERlOUSX/megatools
+```
+```sh  
+cd megatools
+```
+```sh  
+meson b
+```
+```sh  
+ninja -C b
+```
+```sh  
+sudo ninja -C b install
+```
+```sh  
+cd
+```
+```sh  
+wget https://mega.nz/linux/MEGAsync/xUbuntu_20.04/amd64/megacmd-xUbuntu_20.04_amd64.deb
+```
+```sh  
+sudo apt install ./megacmd-xUbuntu_20.04_amd64.deb
+```
+(Ignore the warning "Download is performed unsandboxed as root as file" if it is shown...Continue with the other steps now!)
+```sh  
+tmux
+``` 
 **Now there are two methods to go further!**
 - Method 1
   
@@ -141,13 +173,13 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 - `API_ID` -  Get this value from https://my.telegram.org/apps
 - `API_HASH` - Get This Value from https://my.telegram.org/apps
 - `TG_BOT_TOKEN` - Make a bot from https://t.me/BotFather and enter the token here.
-- `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features.
-- `Mega_password` - This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features.
+- `Mega_email` - This is not necessary! Enter your mega email only if you have a mega.nz account with pro/business features. (Used for downloading links with the download engine 'MEGAcmd' which is used in this repository.)
+- `Mega_password` - This is not necessary! Enter your mega password only if you have a mega.nz account with pro/business features. (Used for downloading links with the download engine 'MEGAcmd' which is used in this repository.)
 - `Bot_username` - Your bot's telegram username. (must enter with '@' in the front of the username)
 - `AUTH_USERS` - Id's of the telegram users, who you want to allow for multitasking - downloading multiple links at once!
 - `OWNER_ID` - Your(owner's) telegram id
-- `REDIS_URI` - Get This Value from https://app.redislabs.com/#/login
-- `REDIS_PASS` - Get This Value from https://app.redislabs.com/#/login
+- `REDIS_URI` - Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)
+- `REDIS_PASS` - Get This Value from http://redislabs.com/try-free (If you don't know how to obtain the a video tutorial is available here:- https://t.me/botzupdate/5)
 
 ---
 
@@ -168,9 +200,27 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 <br>
 
-- `/delmyfolder` - To delete the download folder of the owner and the auth users. <br>
-(Since owner and auth users support multitasking their downloads folder will not get deleted automatically!. So If you want to clean up the server storage hit that command and delete your download folder after all of your current downloads got uploaded. If you are on heroku free dynos this doesn't really matter but if you are on a vps please remember to do it once in a while!)<br>
-<b>Note :- Do not send this command while links are being downloaded and uploaded!</b><br>
+- `/mega_ini` - If you are the bot owner (who deploys the bot) and have a pro/business account; In addition to providing your mega credentials in config variables when deploying the bot, you will have to create a mega.ini file for using with the download engine 'megatools' which is used in this repository. Going through this step is essential if you are willing to avoid quota limits when downloading links!
+ 
+<b>Create a new text file in notepad or from any other method. Copy the code shown below and paste it in your newly created text file. Replace the values with your actual credentials! Then save the file as "mega.ini"</b>
+
+```sh  
+[Login]
+Username = your-mega-email-without-inverted-commas
+Password = your-mega-password-without-inverted-commas
+
+[Network]
+# 1MiB/s
+SpeedLimit = 0
+
+[UI]
+Colors = true
+``` 
+
+<b>Note :- In the above code change only the "Username" and the "Password" with your credentials. Keep others exactly as it is and save the file as "mega.ini"</b>
+ 
+Now send your "mega.ini" file to your bot and as a reply to it send the command <code>/mega_ini</code> 
+<br>
  
 - `/black` - To ban unwanted users from the bot! <br>
 (<b>Syntax of sending the commnad to the bot is</b>:- <code>/black</code> <i>userid</i>)<br>
@@ -196,8 +246,11 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 
 ## Credits, and Thanks to
 
-* [Odwyersoftware](https://github.com/odwyersoftware) for the awesome [Python library](https://github.com/odwyersoftware/mega.py) of [mega.nz-API](https://mega.nz/API)
+* [megous](https://github.com/megous) for [megatools](https://megatools.megous.com)
+* [mega.nz](https://mega.nz) for [MEGAcmd](https://github.com/meganz/MEGAcmd)
+* [Odwyersoftware](https://github.com/odwyersoftware) for the [Python library](https://github.com/odwyersoftware/mega.py) of [mega.nz-API](https://mega.nz/API) 
 * [ProThinkerGang](https://github.com/ProThinkerGang) for the database module code!
+* [Anjana](https://github.com/AnjanaMadu) for various helps!
 * [Dan](https://github.com/delivrance) for [pyrogram](https://github.com/Pyrogram)
 
 <b>Project written and created by</b> - [XMYSTERIOUSX](https://github.com/XMYSTERlOUSX)
@@ -205,4 +258,5 @@ Now If you did everything correctly, the bot will be running successfully! 🥳
 ---
 
 #### LICENSE
+
 - GPLv3
