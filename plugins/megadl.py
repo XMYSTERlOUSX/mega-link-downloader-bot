@@ -53,7 +53,7 @@ async def mega_dl(bot, update):
     add_chat(fuser)
     url = update.text
     if "mega.nz" in url:
-        if "folder" not in url or "#F" not in url or "#N" not in url:
+        if ("folder" or "#F" or "#N") not in url:
             usermsg = await bot.send_message(
                 chat_id=update.chat.id,
                 text=f"""<b>Processing...⏳</b>""",
