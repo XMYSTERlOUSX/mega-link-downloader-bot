@@ -102,7 +102,7 @@ async def mega_dl(bot, update):
                 logger.info(e)
                 await bot.edit_message_text(
                     chat_id=update.chat.id,
-                    text="Error: "+ e + "\n\n" + error_text,
+                    text="Error: "+ str(e) + "\n\n" + error_text,
                     message_id=usermsg.message_id
                 )
                 return
@@ -147,7 +147,7 @@ async def mega_dl(bot, update):
                             logger.info(e)
                             try:
                                 await bot.edit_message_text(
-                                    text="Error: "+ e,
+                                    text="Error: "+ str(e),
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
@@ -169,7 +169,7 @@ async def mega_dl(bot, update):
                             try:
                                 downlaoding_in_megacmd = False
                                 await bot.edit_message_text(
-                                    text="Error: "+ e,
+                                    text="Error: "+ str(e),
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
@@ -230,7 +230,7 @@ async def mega_dl(bot, update):
                                         return
                             except Exception as e:
                                 await bot.edit_message_text(
-                                    text="Error: "+ e,
+                                    text="Error: "+ str(e),
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
@@ -265,7 +265,7 @@ async def mega_dl(bot, update):
                             except Exception as e:
                                 logger.info(e)
                                 await bot.edit_message_text(
-                                    text="Error: "+ e,
+                                    text="Error: "+ str(e),
                                     chat_id=update.chat.id,
                                     message_id=usermsg.message_id
                                 )
@@ -278,7 +278,7 @@ async def mega_dl(bot, update):
                 except Exception as e:
                     logger.info(e)
                     await bot.edit_message_text(
-                        text="Error: "+ e,
+                        text="Error: "+ str(e),
                         chat_id=update.chat.id,
                         message_id=usermsg.message_id
                     )
