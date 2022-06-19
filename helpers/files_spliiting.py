@@ -9,7 +9,7 @@ from hachoir.parser import createParser
 from hachoir.metadata import extractMetadata
 import math
 
-from fsplit.filesplit import Filesplit
+from filesplit.split import Split
 
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
@@ -20,7 +20,7 @@ from translation import Translation
 
 def split_files(download_directory, splitting_size, splitted_files_directory):
     try:
-        fs = Filesplit()
+        fs = Split()
         fs.split(
             file=download_directory,
             split_size=splitting_size,
