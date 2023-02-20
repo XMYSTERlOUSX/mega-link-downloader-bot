@@ -260,3 +260,9 @@ Now send your "mega.ini" file to your bot and as a reply to it send the command 
 #### LICENSE
 
 - GPLv3
+
+---
+
+#### Buy Me a Coffee
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/xmysteriousx)
